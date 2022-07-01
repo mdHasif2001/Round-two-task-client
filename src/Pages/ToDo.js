@@ -18,7 +18,7 @@ const ToDo = () => {
 
     const deleteItem = (id) => {
         const updatedItems = items.filter((elem, ind) => {
-            return ind !==  id;
+            return ind !== id;
         });
 
         setItems(updatedItems);
@@ -42,17 +42,16 @@ const ToDo = () => {
 
             {/* ... */}
 
-            <div className='border-2 border-primary mt-2 rounded-md flex' style={{ height: '50px', width: '290px', marginLeft: '537px', backgroundColor: '', color: '' }}>
+            <div className='grid align-middle justify-center'>
 
                 {
                     items.map((elem, ind) => {
                         return (
-                            <div className='flex' key={ind}>
-                                <h3 className='p-2'>{ elem }</h3>
-                                <i className='fa fa-check mt-4  hover:text-indigo-800' style={{ marginLeft: '208px' }} title='complete task'
+                            <div className='border-2 border-primary mt-2 rounded-md flex justify-between ' style={{ height: '50px', width: '290px', marginLeft: '', backgroundColor: 'rgb(79 70 229)', color: 'white' }} key={ind}>
+                                <h3 className='p-2'> {elem}</h3>
+                                <i className='fa fa-check mt-4 pr-2  hover:text-indigo-800' title='complete task'
                                 onClick={() => deleteItem(ind)}
                                 ></i>
-
                             </div>
 
                         )
